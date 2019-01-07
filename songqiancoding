@@ -95,3 +95,17 @@ public int nthRare (int[] elements, int n) {
     return pq.poll().getValue();
 }
 
+//log parser
+public Collection<Integer> LogParser (String xml, String message) {
+     Collection<Integer> res = new Collection<>();
+     String[] strs = xml.split("</message>");
+     for(String s : str ) {
+        if(s.indexOf(message) != -1) {
+            String sub = s.substring(0, s.indexOf(message));
+            int j = sub.lastIndexOf("Id");
+            res.add(Integer.parseInt(sub.charAt(j + 5)));
+        }
+     }
+     return res; 
+
+}
