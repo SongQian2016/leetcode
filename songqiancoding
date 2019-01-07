@@ -109,3 +109,22 @@ public Collection<Integer> LogParser (String xml, String message) {
      return res; 
 
 }
+
+//movies can view or not 
+
+public boolean canViewAll (Collections<Movie> movies) {
+
+     if(movies.size() == 0) {
+     return true;
+     }
+ 
+     for(int i = 1; i < movies.size(); i++ ) {
+         
+       if( !movies.get(i).start.after(movies.get(i-1).end) {
+            return false;
+       } 
+     }
+
+    return true;
+
+}
